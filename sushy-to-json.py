@@ -43,7 +43,7 @@ def run(args):
                 continue
         data = {
           'name': s_inst.name,
-          'mac': [i.mac_address
+          'ports': [{"address": i.mac_address}
                   for i in s_inst.ethernet_interfaces.get_members()],
           'cpu': s_inst.processors.summary.count,
           'memory': (s_inst.memory_summary.size_gib * 1024),
